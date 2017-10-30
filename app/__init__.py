@@ -8,6 +8,7 @@ db = SQLAlchemy
 
 def create_app(config_name):
 
+    # Initializing application
     app = Flask(__name__)
 
     # Creating the app configurations
@@ -15,7 +16,7 @@ def create_app(config_name):
 
     # Initializing flask extensions
     bootstrap.init_app(app)
-    db.init_app(app)
+    # db.init_app(app)
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
