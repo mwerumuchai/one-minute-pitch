@@ -1,0 +1,7 @@
+<!-- Display all the categories -->
+{% macro displayCategoryList(category_list) %} {% for category in category_list %}
+
+<div class="well col-xs-10 col-sm-6 col-md-2 col-lg-2 pitch-card text-center">
+  <a href="/pitch/{{pitch_id}}"> {{ pitch.name }} </a>
+</div>
+{% endfor %}{% endmacro %}
