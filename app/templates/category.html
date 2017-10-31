@@ -2,4 +2,7 @@
 
 <!-- content block -->
 {% block content %}
-<h3>{{ title }}</h3> {% endblock %}
+<h3>{{ title }}</h3>
+<hr> {% if pitches %} {{ macro.displayPitches(pitches)}} {%else%}
+<h3 class="text-center">This Category has no Pitch</h3>{% endif %}
+<a class="btn text-center" href="/category/pitch/new/{{category.id}}">Write a new Pitch</a> {% endblock %}

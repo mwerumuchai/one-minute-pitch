@@ -1,8 +1,9 @@
-from flask import render_template
+from flask import render_template,redirect,url_for,abort
 from . import main
 from ..models import Category, User,Peptalk
 from .. import db
-from flask_login import login_required
+from flask_login import login_required, current_user
+from .forms import PeptalkForm
 
 # Views
 @main.route('/')
@@ -20,10 +21,10 @@ def category(id):
     '''
     category route function returns a list of pitches chosen and allows users to create a new pitch
     '''
-    categories = Category.query.get(id)
+    category = Category.query.get(id)
     pitches = Peptalk.get_pitches(id)
     title = "Pitches"
-    return render_template('category.html', title = title, categories = categories,pitches = pitches)
+    return render_template('category.html', title = title, category = category,pitches = pitches)
 
 # Dynamic routing
 @main.route('/category/pitch/new/<int:id>', methods = ['GET','POST'])
@@ -36,11 +37,11 @@ def new_pitch(id):
     category = Category.query.filter_by(id=id).first()
 
     if form.validate_on_submit():
-        pitch = form.pitch.data
-        user = current_user._get_current_object()
-        new_pitch = Peptalk(category_id=Category.id,content=content, user_id=user.id)
+        content = form.content.data
+        # user = current_user._get_current_object()
+        new_pitch = Peptalk(content=content,user_id=current_user.id,category_id=category.id)
         new_pitch.save_pitch()
         return redirect(url_for('.category', id = category.id))
 
-    title = f'{category.title} pitch'
-    return render_template('pitch.html', title = title, pitch_form = pitch, category=category)
+    title = 'New pitch'
+    return render_template('new_pitches.html', title = title, pitch_form = form)

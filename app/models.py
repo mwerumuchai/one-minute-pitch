@@ -58,7 +58,7 @@ class Peptalk(db.Model):
         '''
         db.session.add(self)
         db.session.commit()
-        
+
     @classmethod
     def clear_pitches(cls):
         Peptalk.all_pitches.clear()
@@ -83,6 +83,7 @@ class User(UserMixin,db.Model):
     email=db.Column(db.String(255),unique=True,index=True)
     password_hash=db.Column(db.String(255))
     pass_secure = db.Column(db.String(255))
+    pitches = db.relationship("Peptalk", backref="user", lazy = "dynamic")
 
     # securing our passwords
     @property
