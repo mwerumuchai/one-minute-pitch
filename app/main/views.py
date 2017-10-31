@@ -1,7 +1,7 @@
 from flask import render_template
 from . import main
 from ..models import Category
-# from .. import db
+from .. import db
 
 # Views
 @main.route('/')

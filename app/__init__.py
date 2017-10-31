@@ -4,7 +4,7 @@ from config import config_options
 from flask_sqlalchemy import SQLAlchemy
 
 bootstrap = Bootstrap()
-db = SQLAlchemy
+db = SQLAlchemy()
 
 def create_app(config_name):
 
@@ -16,7 +16,7 @@ def create_app(config_name):
 
     # Initializing flask extensions
     bootstrap.init_app(app)
-    # db.init_app(app)
+    db.init_app(app)
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
