@@ -1,7 +1,7 @@
 <!-- Display all the categories -->
 {% macro displayCategoryList(category_list) %} {% for categories in category_list %}
 
-<div class="well col-xs-12 col-sm-12 col-md-12 col-lg-12 pitch-card text-center">
+<div class="well well-lg col-xs-12 col-sm-12 col-md-12 col-lg-12 pitch-card text-center">
   <a href="/pitch/{{pitch_id}}"> {{ categories.name }} </a>
 </div>
 {% endfor %}{% endmacro %}

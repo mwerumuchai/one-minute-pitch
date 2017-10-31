@@ -1,6 +1,6 @@
 from flask import render_template
 from . import main
-from ..models import Category
+from ..models import Category, User
 from .. import db
 
 # Views
@@ -22,11 +22,11 @@ def category(id):
     category = Category.query.get(id)
     return render_template('category.html', title = title, category = category)
 
-#Dynamic routing
-# # @main.route('/pitch/<int:id>')
-# def pitch(id):
-#     '''
-#     view root page function that returns the pitch details page and its data
-#     '''
-#     title = f"Welcome to One Minute Pitch"
-#     return render_template('pitch.html', title = title, pitch = pitch)
+# Dynamic routing
+@main.route('/pitch/<int:id>')
+def pitch(id):
+    '''
+    view root page function that returns the pitch details page and its data
+    '''
+    title = f"Welcome to One Minute Pitch"
+    return render_template('pitch.html', title = title, pitch = pitch)

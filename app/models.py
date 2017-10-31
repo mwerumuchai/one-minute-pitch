@@ -25,3 +25,18 @@ class Category(db.Model):
         '''
         categories = Category.query.all()
         return categories
+
+#Users
+class User(db.Model):
+    '''
+    User class that will help to create new Users
+    '''
+    __tablename__ = 'users'
+
+    # add column
+    id = db.Column(db.Integer,primary_key = True)
+    username = db.Column(db.String(255))
+    pass_secure = db.Column(db.String(255))
+
+    def __repr__(self):
+        return f'User {self.username}'
