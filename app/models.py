@@ -2,6 +2,7 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
+from datetime import datetime
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -32,6 +33,42 @@ class Category(db.Model):
         '''
         categories = Category.query.all()
         return categories
+
+#pitches
+class Peptalk(db.Model):
+
+    """
+    List of pitches in each category
+    """
+    all_pitches = []
+
+    __tablename__ = 'pitches'
+
+    id = db.Column(db.Integer,primary_key = True)
+    content = db.Column(db.String)
+    date_posted = db.Column(db.DateTime,default=datetime.utcnow)
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+    category_id = db.Column(db.Integer,db.ForeignKey("categories.id"))
+
+
+
+    def save_pitch(self):
+        '''
+        Save the pitches
+        '''
+        db.session.add(self)
+        db.session.commit()
+        
+    @classmethod
+    def clear_pitches(cls):
+        Peptalk.all_pitches.clear()
+
+    # display pitches
+    @classmethod
+    def get_pitches(cls,id):
+        pitches = Peptalk.query.filter_by(category_id=id).all()
+        return pitches
+
 
 #Users
 class User(UserMixin,db.Model):
