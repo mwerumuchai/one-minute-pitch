@@ -1,0 +1,9 @@
+{% extends 'base.html'%} {% import 'macros.html' as macro%}
+
+<!-- Content block -->
+{% block content %}
+
+<div class="container">
+  <h3>One Minute Pitch</h3>
+  <ul>{{ macro.displayCategoryList(categories) }}</ul>
+</div> {% endblock %}

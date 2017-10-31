@@ -1,7 +1,8 @@
 from flask import render_template
 from . import main
-from ..models import Category
-# from .. import db
+from ..models import Category, User
+from .. import db
+from flask_login import login_required
 
 # Views
 @main.route('/')
@@ -22,7 +23,7 @@ def category(id):
     category = Category.query.get(id)
     return render_template('category.html', title = title, category = category)
 
-#Dynamic routing
+# Dynamic routing
 @main.route('/pitch/<int:id>')
 def pitch(id):
     '''
