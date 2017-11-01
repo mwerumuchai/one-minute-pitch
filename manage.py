@@ -10,7 +10,7 @@ login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
 
 # Creating app instance
-app = create_app('development')
+app = create_app('production')
 
 manager = Manager(app)
 manager.add_command('server',Server)
