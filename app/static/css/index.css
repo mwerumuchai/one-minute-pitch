@@ -1,3 +1,16 @@
+body {
+  font-family: sans-serif;
+  background: #eee;
+}
+
 #navigate {
   background-color: #ff0080;
 }
+
+/*#contentinfo {
+  line-height: 20px;
+  margin: 30px;
+  padding-bottom: 20px;
+  text-align: justify;
+  width: 140px;
+}*/
