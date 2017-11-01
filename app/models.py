@@ -35,7 +35,7 @@ class Category(db.Model):
         categories = Category.query.all()
         return categories
 
-#pitches
+#pitche
 class Peptalk(db.Model):
 
     """
