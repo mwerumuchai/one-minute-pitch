@@ -21,7 +21,12 @@ def category(id):
     '''
     category route function returns a list of pitches chosen and allows users to create a new pitch
     '''
+
     category = Category.query.get(id)
+
+    if category is None:
+        abort(404)
+        
     pitches = Peptalk.get_pitches(id)
     title = "Pitches"
     return render_template('category.html', title = title, category = category,pitches = pitches)
@@ -35,6 +40,9 @@ def new_pitch(id):
     '''
     form = PeptalkForm()
     category = Category.query.filter_by(id=id).first()
+
+    if category is None:
+        abort(404)
 
     if form.validate_on_submit():
         content = form.content.data
@@ -51,9 +59,14 @@ def new_pitch(id):
 @login_required
 def single_pitch(id):
     '''
-    FUnction the returns a single pitch for comment to be added
+    Function the returns a single pitch for comment to be added
     '''
+
     pitches = Peptalk.query.get(id)
+
+    if pitches is None:
+        abort(404)
+
     comment = Comments.get_comments(id)
     title = 'Comment Section'
     return render_template('pitch.html', title = title, pitches = pitches, comment = comment)
@@ -68,6 +81,9 @@ def new_comment(id):
     '''
     form = CommentForm()
     pitches = Peptalk.query.filter_by(id=id).first()
+
+    if pitches is None:
+        abort(404)
 
     if form.validate_on_submit():
         comment_section_id = form.comment_section_id.data
