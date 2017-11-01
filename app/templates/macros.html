@@ -10,23 +10,20 @@
 <!-- display Pitches -->
 
 {% macro displayPitches(pitch_list) %} {% for pitches in pitch_list %}
-<li>
-  <a href="/pitch/{{pitches.id}}">{{pitches.content}}</a>
-</li>
+<div id="contentinfo col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
+  <ul style="list-style-type:square">
+    <li>
+      <h3><a  class="text-grey" href="/pitch/{{pitches.id}}">{{pitches.content|truncate(250)}}</a> <small>{{pitches.date_posted}}</small></h3>
+    </li>
+    <hr>
+  </ul>
+</div>
 {% endfor %}{% endmacro %}
 
 
 <!-- display specific pitch -->
 {% macro displaySpecificPitch(specific_pitch_list) %} {% for comment in specific_pitch_list %}
-<li>
-  {{comment.comment_section_id}}
-</li>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
+  <hr> {{comment.comment_section_id}}
+</div>
 {% endfor %}{% endmacro %}
-
-
-<!-- display comments -->
-<!-- {% macro displayComments(comment_list) %} {% for comment in comment_list %}
-<li>
-  {{comment.content}}
-</li>
-{% endfor %}{% endmacro %}-->
