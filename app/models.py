@@ -17,6 +17,7 @@ class Category(db.Model):
     # add columns
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(255))
+    description = db.Column(db.String(255))
 
     # save
     def save_category(self):

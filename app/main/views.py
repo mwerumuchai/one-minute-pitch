@@ -55,7 +55,6 @@ def single_pitch(id):
     '''
     pitches = Peptalk.query.get(id)
     comment = Comments.get_comments(id)
-    # print(comment)
     title = 'Comment Section'
     return render_template('pitch.html', title = title, pitches = pitches, comment = comment)
 
