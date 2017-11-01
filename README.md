@@ -1,6 +1,6 @@
 # One Minute Pitch
 
-## A web application that allows users to create a one minute pitch and also get feeedback with votes.
+## A web application that allows users to create a one minute pitch and also get feedback with votes.
 
 ## By [Mweru Muchai](https://github.com/mwerumuchai)
 
@@ -11,9 +11,9 @@ This is a web application that allows various users to submit a short pitch. Use
 ## User Stories
 * As a user I would like to view the different categories.
 * As a user I would like to see the pitches other people have posted.
-* As a user I would like to vote on the pitch they liked and give it a downvote or upvote.
 * As a user I would like to comment on the different pitches and leave feedback.
 * As a user I would like to submit a pitch in any category.
+* As a user I would like to vote on the pitch they liked and give it a downvote or upvote.
 
 ## Specifications
 | Behaviour | Input | Output |
@@ -23,11 +23,11 @@ This is a web application that allows various users to submit a short pitch. Use
 |Add new pitch | **Click** New pitch | User Should register/sign in to add new pitch |
 |View Pitches | **Click** on a pitch | View a pitch and comments |
 |Comment on a pitch | **Click** Comment | Registered User displays a form where a user can comment on a certain pitch |
-|Upvote a pitch | **Click** glyphicon upvote | Vote for a specific pitch increases |
-|Downvote a pitch | **Click** glyphicon downvote | Vote for a specific pitch decreases |
+<!-- |Upvote a pitch | **Click** glyphicon upvote | Vote for a specific pitch increases |
+|Downvote a pitch | **Click** glyphicon downvote | Vote for a specific pitch decreases | -->
 
 ## Setup/Installation Requirements
-Click on One Minute Pitch link
+Click on [One Minute Pitch](https://minute-pitch.herokuapp.com)
 
 
 ## Known Bugs
