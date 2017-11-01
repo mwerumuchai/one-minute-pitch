@@ -7,7 +7,7 @@ from flask_login import LoginManager
 
 
 # Creating app instance
-app = create_app('production')
+app = create_app('development')
 
 manager = Manager(app)
 manager.add_command('server',Server)
