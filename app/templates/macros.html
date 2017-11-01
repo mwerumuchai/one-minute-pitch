@@ -6,10 +6,26 @@
 </div>
 {% endfor %}{% endmacro %}
 
-<!-- disp -->
+<!-- display Pitches -->
 
 {% macro displayPitches(pitch_list) %} {% for pitches in pitch_list %}
 <li>
-  {{pitches.content}}
+  <a href="/pitch/{{pitches.id}}">{{pitches.content}}</a>
 </li>
 {% endfor %}{% endmacro %}
+
+
+<!-- display specific pitch -->
+{% macro displaySpecificPitch(specific_pitch_list) %} {% for comment in specific_pitch_list %}
+<li>
+  {{comment.comment_section_id}}
+</li>
+{% endfor %}{% endmacro %}
+
+
+<!-- display comments -->
+<!-- {% macro displayComments(comment_list) %} {% for comment in comment_list %}
+<li>
+  {{comment.content}}
+</li>
+{% endfor %}{% endmacro %}-->

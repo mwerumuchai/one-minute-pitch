@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% import 'macros.html' as macro%}
+
+<!-- content block -->
+{% block content %}
+<h3>{{ title }}</h3>
+<h3> {{pitches.content}}</h3>
+<hr> {% if comment %} {{ macro.displaySpecificPitch(comment)}} {%else%}
+<h3 class="text-center">No comment </h3>{% endif %}
+<a class="btn text-center" href="/pitch/new/{{pitches.id}}">Add a comment</a> {% endblock %}
