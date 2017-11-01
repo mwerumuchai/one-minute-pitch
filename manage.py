@@ -4,10 +4,7 @@ from app.models import Category,User,Peptalk,Comments
 from  flask_migrate import Migrate, MigrateCommand
 from flask_login import LoginManager
 
-#initialize login
-login_manager = LoginManager()
-login_manager.session_protection = 'strong'
-login_manager.login_view = 'auth.login'
+
 
 # Creating app instance
 app = create_app('production')
