@@ -13,7 +13,7 @@
 <div id="contentinfo col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
   <ul style="list-style-type:square">
     <li>
-      <h3><a  class="text-grey" href="/pitch/{{pitches.id}}">{{pitches.content|truncate(250)}}</a> <small>{{pitches.date_posted}}</small></h3>
+      <h3><a  class="text-grey" href="/pitch/{{pitches.id}}">{{pitches.content|truncate(250)}}</a><span><small>Posted at:{{pitches.date_posted.strftime('%Y/%m/%d %r')}}</small></span></h3>
     </li>
     <hr>
   </ul>

@@ -5,5 +5,5 @@
 {% block content %}
 <h3 class="text-center">Make your one minute count. <small class="text-danger"> <i>Click pitch to comment</i></small></h3>
 <hr> {% if pitches %} {{ macro.displayPitches(pitches)}} {%else%}
-<h4 class="text-center text-danger">This Category has no Pitch</h4>
-<a class="btn btn-primary text-center text-danger" href="/category/pitch/new/{{category.id}}">Write a new Pitch</a>{% endif %} {% endblock %}
+<h4 class="text-right text-danger">This Category has no Pitch</h4>{% endif %}
+<a class="btn btn-primary text-center text-danger" href="/category/pitch/new/{{category.id}}">Write a new Pitch</a>{% endblock %}
