@@ -6,7 +6,7 @@ from flask_login import LoginManager
 
 
 
-# Creating app instance
+# Creating app instances
 # app = create_app('development')
 app = create_app('production')
 
